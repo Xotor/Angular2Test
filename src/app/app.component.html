@@ -2,9 +2,18 @@
 <book-list></book-list>
 
 <div>
-  <button (click)="isHidden=!isHidden">Toggle</button>
+  <button [disabled]="isDisabled"
+          (click)="isHidden=!isHidden">
+    Toggle Visibility
+  </button>
+  <button (click)="isDisabled=!isDisabled">
+    Toggle Disabled
+  </button>
 </div>
 <br>
 <div [hidden]="isHidden">
   Text that is only vissible if the property isHidden is false
 </div>
+<br>
+<div class="MyBox" (mousemove)="onMousemove($event)"></div>
+<div>Mouse Position: {{x}}|{{y}}</div>
