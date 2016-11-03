@@ -1,4 +1,5 @@
 import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import {Book} from '../shared';
 
 @Component({
   selector: 'book-list',
@@ -10,7 +11,7 @@ export class BookListComponent implements OnInit {
   @Output() ping = new EventEmitter<string>();
   x: number;
   y: number;
-  books = [
+  books: Book[] = [
     {
       "title": "Design Patterns",
       "subtitle": "Elements of Reusable Object-Oriented Software",

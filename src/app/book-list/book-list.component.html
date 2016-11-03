@@ -6,6 +6,9 @@
   <h2 (click)="sendPing()">BookList: {{title}}</h2>
 
   <div class="row" *ngFor="let book of books">
-    <div class="col">{{book.title}}</div>
+    <div class="col">
+      <h3>{{book.title}}</h3>
+        {{book.abstract}}
+    </div>
   </div>
 </div>
