@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
+<book-list></book-list>
+
+<div>
+  <button (click)="isHidden=!isHidden">Toggle</button>
+</div>
+<br>
+<div [hidden]="isHidden">
+  Text that is only vissible if the property isHidden is false
+</div>
