@@ -1,6 +1,11 @@
 <div class="BookList">
-  <h2 (click)="sendPing()">BookList: {{title}}</h2>
   <div class="MyBox" (mousemove)="onMousemove($event)">
     Mouse Position: {{x}}|{{y}}
+  </div>
+
+  <h2 (click)="sendPing()">BookList: {{title}}</h2>
+
+  <div class="row" *ngFor="let book of books">
+    <div class="col">{{book.title}}</div>
   </div>
 </div>
