@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'book-list',
@@ -7,13 +7,21 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class BookListComponent implements OnInit {
   @Input() title: string;
+  @Output() ping = new EventEmitter<string>();
   x: number;
   y: number;
 
   constructor() {
+    console.log("BookListComponent.constructor");
   }
 
   ngOnInit() {
+    console.log("BookListComponent.ngOnInit");
+  }
+
+  sendPing(){
+    console.log("BookListComponent.sendPing");
+    this.ping.emit("Ping!!");
   }
 
   onMousemove({clientX, clientY}:MouseEvent) {

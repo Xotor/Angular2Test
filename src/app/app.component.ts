@@ -6,7 +6,11 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
-  isHidden: boolean = true;
-  isDisabled: boolean = false;
+  title = 'MyLittleTestApp';
+  isHidden = false;
+  isDisabled = false;
+
+  handlePing($event){
+    console.log("AppComponent.handlePing: " + $event);
+  }
 }

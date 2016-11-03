@@ -1,12 +1,16 @@
-<h1>{{title}}</h1>
 <div>
-  <button [disabled]="isDisabled"
-          (click)="isHidden=!isHidden">
-    Toggle Visibility
-  </button>
-  <button (click)="isDisabled=!isDisabled">
-    Toggle Disabled
-  </button>
+  <h1>{{title}}</h1>
+  <p>
+    <button [disabled]="isDisabled"
+            (click)="isHidden=!isHidden">
+      Toggle Visibility
+    </button>
+    <button (click)="isDisabled=!isDisabled">
+      Toggle Disabled
+    </button>
+  </p>
+  <div [hidden]="isHidden">
+    Text that is only vissible if the property isHidden is false
+  </div>
+  <book-list [title]="BookListTitle" (ping)="handlePing($event)"></book-list>
 </div>
-<br>
-<book-list title="BookListTitle"></book-list>
