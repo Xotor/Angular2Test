@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'book-list',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
+  x: number;
+  y: number;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  onMousemove({clientX, clientY}:MouseEvent) {
+    this.x = clientX;
+    this.y = clientY;
+  }
 }
