@@ -11,8 +11,8 @@ export class AppComponent {
   isDisabled = false;
   x: number;
   y: number;
-  onMousemove($event:MouseEvent){
-    this.x=$event.clientX;
-    this.y=$event.clientY;
+  onMousemove({clientX, clientY}:MouseEvent){
+    this.x=clientX;
+    this.y=clientY;
   }
 }
