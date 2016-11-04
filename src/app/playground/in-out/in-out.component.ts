@@ -2,8 +2,8 @@ import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 
 @Component({
   selector: 'in-out',
-  templateUrl: './in-out.component.html',
-  styleUrls: ['./in-out.component.css']
+  templateUrl: 'in-out.component.html',
+  styleUrls: ['in-out.component.css']
 })
 export class InOutComponent implements OnInit {
   @Input() title: string;
