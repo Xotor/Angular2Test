@@ -9,6 +9,7 @@ import {BookDataService} from "./shared/book-data.service";
 import {routing} from "./app.routing";
 import { PlaygroundComponent } from './playground/playground.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     BookListComponent,
     InOutComponent,
     PlaygroundComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

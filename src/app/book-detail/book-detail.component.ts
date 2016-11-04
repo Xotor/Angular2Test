@@ -24,6 +24,10 @@ export class BookDetailComponent implements OnInit {
     //   .switchMap(isbn => this.service.getBookByIsbn(isbn))
     //   .subscribe(book => this.book = book);
 
+    // Oder folgendes, aber Probleme bei Pagination!
+    // const isbn = this.route.snapshot.params['isbn'];
+    // this.bookData.getBookByIsbn(isbn).subscribe((book: Book) => this.book = book);
+
     // Verkettete subscribes => BAD STYLE
     this.route.params.subscribe((params: {isbn: string}) => {
       this.bookData.getBookByIsbn(params.isbn).subscribe((book: Book) => this.book = book);
