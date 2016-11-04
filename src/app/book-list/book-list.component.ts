@@ -16,14 +16,23 @@ export class BookListComponent implements OnInit {
 
   constructor(private bookData: BookDataService) {
     console.log("BookListComponent.constructor");
-    this.books = bookData.getBooks();
+    bookData.getBooks()
+      .subscribe(
+        data => {
+          console.log("Success: " + data);
+          this.books = data;
+        },
+        err => console.log("Error: " + err),
+        () => console.log("Complete")
+      )
+      .unsubscribe();
   }
 
   ngOnInit() {
     console.log("BookListComponent.ngOnInit");
   }
 
-  sendPing(){
+  sendPing() {
     console.log("BookListComponent.sendPing");
     this.ping.emit("Ping!!");
   }
