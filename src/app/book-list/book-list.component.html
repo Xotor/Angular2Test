@@ -1,8 +1,15 @@
 <div class="BookList" xmlns="http://www.w3.org/1999/html">
-  <div class="row" *ngFor="let book of books">
-    <div class="col">
-      <h3><a [routerLink]="['/books', book.isbn]">{{book.title}}</a></h3>
-      <b>{{book.subtitle}}</b> from <b>{{book.author}}</b>
-    </div>
-  </div>
+
+  <table>
+    <tr>
+      <th>ISBN</th>
+      <th>Author</th>
+      <th>Title</th>
+    </tr>
+    <tr *ngFor="let book of books">
+      <td><a [routerLink]="['/books', book.isbn]">{{book.isbn}}</a></td>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+    </tr>
+  </table>
 </div>

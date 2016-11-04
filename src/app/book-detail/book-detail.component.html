@@ -1,7 +1,33 @@
 <div class="BookDetails">
   <h2>BookDetails</h2>
-  <ul>
-    <li>Autor: </li>
-    <li>Abstract: </li>
-  </ul>
+  <table *ngIf="book">
+    <tr>
+      <td>ISBN</td>
+      <td>{{book.isbn}}</td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td>{{book.title}}</td>
+    </tr>
+    <tr>
+      <td>Subtitle</td>
+      <td>{{book.subtitle}}</td>
+    </tr>
+    <tr>
+      <td>Author</td>
+      <td>{{book.author}}</td>
+    </tr>
+    <tr>
+      <td>Abstract</td>
+      <td>{{book.abstract}}</td>
+    </tr>
+    <tr>
+      <td>Pages</td>
+      <td>{{book.numPages}}</td>
+    </tr>
+    <tr>
+      <td>Publisher</td>
+      <td>{{book.publisher.name}} (<a href="{{book.publisher.url}}">{{book.publisher.url}}</a>)</td>
+    </tr>
+  </table>
 </div>

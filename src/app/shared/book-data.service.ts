@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from "@angular/core";
 import {Book} from "./book";
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
-import 'rxjs/Rx';
+import "rxjs/Rx";
 
 @Injectable()
 export class BookDataService {
@@ -15,6 +15,13 @@ export class BookDataService {
 
   getBooks(): Observable<Book[]> {
     console.log("BookDataService.getBooks");
-    return this.http.get(this.baseUrl).map((response: Response) => response.json());
+    return this.http.get(this.baseUrl)
+      .map((response: Response) => response.json());
+  }
+
+  getBookByIsbn(isbn: string): Observable<Book> {
+    console.log("BookDataService.getBookByIsbn");
+    return this.http.get(this.baseUrl + "/" + isbn)
+      .map((response: Response) => response.json());
   }
 }
