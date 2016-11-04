@@ -11,6 +11,7 @@ export class BookDataService {
   private books: Book[];
 
   constructor(private http: Http) {
+    console.log("BookDataService.constructor");
   }
 
   getBooks(): Observable<Book[]> {

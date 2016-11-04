@@ -6,10 +6,12 @@ import {BookDetailComponent} from "../book-detail/book-detail.component";
 export class ConfirmCanDeactivateGuardService implements CanDeactivate<BookDetailComponent> {
 
   canDeactivate(component: BookDetailComponent, route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    console.log("ConfirmCanDeactivateGuardService.canDeactivate");
     return confirm("Do you really want to leave?");
   }
 
   constructor() {
+    console.log("ConfirmCanDeactivateGuardService.consturctor");
   }
 
 }
