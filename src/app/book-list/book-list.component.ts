@@ -1,6 +1,5 @@
-import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
-import {Book} from '../shared';
-import {BookDataService} from "../shared";
+import {Component, OnInit} from "@angular/core";
+import {Book, BookDataService} from "../shared";
 
 @Component({
   selector: 'book-list',
@@ -8,10 +7,7 @@ import {BookDataService} from "../shared";
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  @Input() title: string;
-  @Output() ping = new EventEmitter<string>();
-  x: number;
-  y: number;
+
   books: Book[];
 
   constructor(private bookData: BookDataService) {
@@ -33,17 +29,6 @@ export class BookListComponent implements OnInit {
           console.log("Complete")
         }
       );
-      //.unsubscribe();
     console.log("BookListComponent.ngOnInit finished");
-  }
-
-  sendPing() {
-    console.log("BookListComponent.sendPing");
-    this.ping.emit("Ping!!");
-  }
-
-  onMousemove({clientX, clientY}:MouseEvent) {
-    this.x = clientX;
-    this.y = clientY;
   }
 }

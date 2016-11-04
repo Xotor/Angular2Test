@@ -1,20 +1,5 @@
-div {
- padding: 1em;
-}
-
-.MyBox {
-  height: 200px;
-  width: 800px;
-  background-color: aquamarine;
-}
-
-.BookList{
-  border: 1px solid;
-}
-
 .row {
   padding: 0.5em;
-  background-color: darkgrey;
 }
 
 .col {

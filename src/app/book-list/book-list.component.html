@@ -1,14 +1,8 @@
-<div class="BookList">
-  <div class="MyBox" (mousemove)="onMousemove($event)">
-    Mouse Position: {{x}}|{{y}}
-  </div>
-
-  <h2 (click)="sendPing()">BookList: {{title}}</h2>
-
+<div class="BookList" xmlns="http://www.w3.org/1999/html">
   <div class="row" *ngFor="let book of books">
     <div class="col">
-      <h3>{{book.title}}</h3>
-        {{book.abstract}}
+      <h3><a [routerLink]="['/books', book.isbn]">{{book.title}}</a></h3>
+      <b>{{book.subtitle}}</b> from <b>{{book.author}}</b>
     </div>
   </div>
 </div>

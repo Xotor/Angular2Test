@@ -1,0 +1,18 @@
+<div class="spielwiese">
+  <p>
+    <button [disabled]="isDisabled"
+            (click)="isHidden=!isHidden">
+      Toggle Visibility
+    </button>
+    <button (click)="isDisabled=!isDisabled">
+      Toggle Disabled
+    </button>
+  </p>
+  <div [hidden]="isHidden">
+    Text that is only vissible if the property isHidden is false
+  </div>
+
+  <!-- '' needed to define it as a string! -->
+  <in-out [title]="'InputParam'" (ping)="handlePing($event)"></in-out>
+  <!--<in-out title="InputParam" (ping)="handlePing($event)"></in-out>-->
+</div>
