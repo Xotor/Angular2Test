@@ -1,20 +1,15 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
 import {BookComponent} from "./book.component";
 import {BookListComponent} from "./book-list/book-list.component";
 import {BookDetailComponent} from "./book-detail/book-detail.component";
 import {BookDataService} from "./shared/book-data.service";
 import {bookRouting} from "./book.routing";
+import {ConfirmCanDeactivateGuardService} from "./shared/confirm-candeactivate-guard.service";
 
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule,
-    FormsModule,
-    HttpModule,
     bookRouting
   ],
   declarations: [
@@ -22,7 +17,10 @@ import {bookRouting} from "./book.routing";
     BookListComponent,
     BookDetailComponent
   ],
-  providers: [BookDataService]
+  providers: [
+    BookDataService,
+    ConfirmCanDeactivateGuardService
+  ]
 })
 export class BookModule {
 }

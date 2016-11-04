@@ -6,6 +6,12 @@ export const routes: Routes = [{
   redirectTo: '/playground',
   pathMatch: 'full'
 }, {
+  path: 'playground',
+  loadChildren: "./playground/playground.module#PlaygroundModule"
+}, {
+  path: 'books',
+  loadChildren: "./book/book.module#BookModule"
+}, {
   path: '**',
   component: PageNotFoundComponent
 }];

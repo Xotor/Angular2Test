@@ -17,7 +17,6 @@ import {PlaygroundModule} from "./playground/playground.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    BookModule,
     PlaygroundModule,
     routing
   ],
