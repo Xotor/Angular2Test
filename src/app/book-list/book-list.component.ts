@@ -26,10 +26,15 @@ export class BookListComponent implements OnInit {
           console.log("Success: " + data);
           this.books = data;
         },
-        err => console.log("Error: " + err),
-        () => console.log("Complete")
-      )
-      .unsubscribe();
+        err => {
+          console.log("Error: " + err);
+        },
+        () => {
+          console.log("Complete")
+        }
+      );
+      //.unsubscribe();
+    console.log("BookListComponent.ngOnInit finished");
   }
 
   sendPing() {
