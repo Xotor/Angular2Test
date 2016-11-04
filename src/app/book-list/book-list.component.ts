@@ -16,7 +16,11 @@ export class BookListComponent implements OnInit {
 
   constructor(private bookData: BookDataService) {
     console.log("BookListComponent.constructor");
-    bookData.getBooks()
+  }
+
+  ngOnInit() {
+    console.log("BookListComponent.ngOnInit");
+    this.bookData.getBooks()
       .subscribe(
         data => {
           console.log("Success: " + data);
@@ -26,10 +30,6 @@ export class BookListComponent implements OnInit {
         () => console.log("Complete")
       )
       .unsubscribe();
-  }
-
-  ngOnInit() {
-    console.log("BookListComponent.ngOnInit");
   }
 
   sendPing() {
