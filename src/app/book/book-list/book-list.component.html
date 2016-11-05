@@ -5,11 +5,15 @@
       <th>ISBN</th>
       <th>Author</th>
       <th>Title</th>
+      <th>Edit</th>
     </tr>
     <tr *ngFor="let book of books">
       <td><a [routerLink]="[book.isbn]">{{book.isbn}}</a></td>
       <td>{{book.title}}</td>
       <td>{{book.author}}</td>
+      <td><a [routerLink]="[book.isbn+'/edit']">Edit</a></td>
     </tr>
   </table>
+
+  <!--<a [routerLink]="['edit']">Create new book</a>-->
 </div>
