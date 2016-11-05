@@ -8,7 +8,7 @@
     <div [hidden]="(!subtitle.errors?.required && !subtitle.errors?.minlength) || subtitle.pristine">
       Subtitle is really to short!
     </div>
-    <table>
+    <table class="table table-bordered table-hover">
       <tr>
         <td>ISBN</td>
         <td>{{book.isbn}}</td>
@@ -18,7 +18,7 @@
           <label for="title">Title:</label>
         </td>
         <td>
-          <input type="text" [(ngModel)]="book.title" name="title" #title="ngModel" required>
+          <input type="text" [(ngModel)]="book.title" name="title" #title="ngModel" required class="form-control">
         </td>
       </tr>
       <tr>
@@ -26,7 +26,7 @@
           <label for="subtitle">Subtitle:</label>
         </td>
         <td>
-          <input type="text" [(ngModel)]="book.subtitle" name="subtitle" #subtitle="ngModel" required minlength="20">
+          <input type="text" [(ngModel)]="book.subtitle" name="subtitle" #subtitle="ngModel" required minlength="20" class="form-control">
         </td>
       </tr>
       <tr>
@@ -34,7 +34,7 @@
           <label for="author">Author:</label>
         </td>
         <td>
-          <input type="text" [(ngModel)]="book.author" name="author" #author="ngModel">
+          <input type="text" [(ngModel)]="book.author" name="author" #author="ngModel" class="form-control">
         </td>
       </tr>
       <tr>
@@ -42,7 +42,7 @@
           <label for="abstract">Abstract:</label>
         </td>
         <td>
-          <input type="text" [(ngModel)]="book.abstract" name="abstract" #abstract="ngModel">
+          <input type="text" [(ngModel)]="book.abstract" name="abstract" #abstract="ngModel" class="form-control">
         </td>
       </tr>
       <tr>
@@ -50,7 +50,7 @@
           <label for="numPages">Pages:</label>
         </td>
         <td>
-          <input type="number" [(ngModel)]="book.numPages" name="numPages" #numPages="ngModel">
+          <input type="number" [(ngModel)]="book.numPages" name="numPages" #numPages="ngModel" class="form-control">
         </td>
       </tr>
       <tr>
@@ -58,7 +58,7 @@
           <label for="publisher.name">Publisher:</label>
         </td>
         <td>
-          <input type="text" [(ngModel)]="book.publisher.name" name="publisher.name" #publisher.name="ngModel">
+          <input type="text" [(ngModel)]="book.publisher.name" name="publisher.name" #publisher.name="ngModel" class="form-control">
         </td>
       </tr>
       <tr>
@@ -66,10 +66,10 @@
           <label for="publisher.url">Publisher Url:</label>
         </td>
         <td>
-          <input type="text" [(ngModel)]="book.publisher.url" name="publisher.url" #publisher.url="ngModel">
+          <input type="text" [(ngModel)]="book.publisher.url" name="publisher.url" #publisher.url="ngModel" class="form-control">
         </td>
       </tr>
     </table>
-    <button type="submit" [disabled]="!form.valid">Save</button>
+    <button class="btn btn-default" type="submit" [disabled]="!form.valid">Save</button>
   </form>
 </div>

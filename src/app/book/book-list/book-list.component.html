@@ -1,6 +1,8 @@
 <div class="BookList" xmlns="http://www.w3.org/1999/html">
 
-  <table>
+  <a class="btn btn-primary" [routerLink]="['new']">Create new book</a>
+  <br><br>
+  <table class="table table-bordered table-hover">
     <tr>
       <th>ISBN</th>
       <th>Author</th>
@@ -9,11 +11,10 @@
     </tr>
     <tr *ngFor="let book of books">
       <td><a [routerLink]="['details/'+book.isbn]">{{book.isbn}}</a></td>
-      <td>{{book.title}}</td>
+      <td>{{book.title | shout:'???'}}</td>
       <td>{{book.author}}</td>
       <td><a [routerLink]="['edit/'+book.isbn]">Edit</a></td>
     </tr>
   </table>
-
-  <a [routerLink]="['new']">Create new book</a>
+ <pre>{{ books | json }}</pre>
 </div>

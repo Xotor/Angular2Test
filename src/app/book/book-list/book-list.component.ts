@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Book, BookDataService} from "../shared";
+import {ShoutPipe} from "../shared/shout.pipe";
 
 @Component({
   selector: 'book-list',

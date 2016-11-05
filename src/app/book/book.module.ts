@@ -9,6 +9,7 @@ import {bookRouting} from "./book.routing";
 import {ConfirmCanDeactivateGuardService} from "./shared/confirm-candeactivate-guard.service";
 import {BookEditComponent} from "./book-edit/book-edit.component";
 import {BookReactiveEditComponent} from "./book-reactive-edit/book-reactive-edit.component";
+import { ShoutPipe } from './shared/shout.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {BookReactiveEditComponent} from "./book-reactive-edit/book-reactive-edit
     BookListComponent,
     BookDetailComponent,
     BookEditComponent,
-    BookReactiveEditComponent
+    BookReactiveEditComponent,
+    ShoutPipe
   ],
   providers: [
     BookDataService,
