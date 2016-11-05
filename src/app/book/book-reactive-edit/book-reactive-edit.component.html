@@ -1,0 +1,81 @@
+<div class="new">
+  <h2>BookNew</h2>
+  <div [hidden]="!form.invalid">
+    Error: The form is invalid!
+  </div>
+  <div [hidden]="!(form.get('isbn').hasError('required') || !form.get('isbn').hasError('minLength'))">
+    Error: The ISBN is required and needs to be at least 11 characters long
+  </div>
+  <div [hidden]="!form.hasError('required', ['title'])">
+    Error: The Title is required!
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label for="title">ISBN:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="isbn">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="title">Title:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="title">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="subtitle">Subtitle:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="subtitle">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="author">Author:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="author">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="abstract">Abstract:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="abstract">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="numPages">Pages:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="numPages">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="publisher.name">Publisher:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="publisher_name">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="publisher.url">Publisher Url:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="publisher_url">
+        </td>
+      </tr>
+    </table>
+    <button type="submit">Save</button>
+  </form>
+</div>

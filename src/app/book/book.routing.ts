@@ -4,6 +4,7 @@ import {BookListComponent} from "./book-list/book-list.component";
 import {BookDetailComponent} from "./book-detail/book-detail.component";
 import {ConfirmCanDeactivateGuardService} from "./shared/confirm-candeactivate-guard.service";
 import {BookEditComponent} from "./book-edit/book-edit.component";
+import {BookReactiveEditComponent} from "./book-reactive-edit/book-reactive-edit.component";
 
 const routes: Routes = [{
   path: '',
@@ -12,12 +13,15 @@ const routes: Routes = [{
     path: '',
     component: BookListComponent
   }, {
-    path: ':isbn',
+    path: 'details/:isbn',
     component: BookDetailComponent,
     canDeactivate: [ConfirmCanDeactivateGuardService]
   }, {
-    path: ':isbn/edit',
+    path: 'edit/:isbn',
     component: BookEditComponent
+  }, {
+    path: 'new',
+    component: BookReactiveEditComponent
   }]
 }]
 

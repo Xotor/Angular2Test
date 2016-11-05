@@ -8,12 +8,12 @@
       <th>Edit</th>
     </tr>
     <tr *ngFor="let book of books">
-      <td><a [routerLink]="[book.isbn]">{{book.isbn}}</a></td>
+      <td><a [routerLink]="['details/'+book.isbn]">{{book.isbn}}</a></td>
       <td>{{book.title}}</td>
       <td>{{book.author}}</td>
-      <td><a [routerLink]="[book.isbn+'/edit']">Edit</a></td>
+      <td><a [routerLink]="['edit/'+book.isbn]">Edit</a></td>
     </tr>
   </table>
 
-  <!--<a [routerLink]="['edit']">Create new book</a>-->
+  <a [routerLink]="['new']">Create new book</a>
 </div>

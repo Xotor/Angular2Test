@@ -7,6 +7,7 @@ import {AppComponent} from "./app.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {BookModule} from "./book/book.module";
 import {PlaygroundModule} from "./playground/playground.module";
+import { BookReactiveEditComponent } from './book/book-reactive-edit/book-reactive-edit.component';
 
 @NgModule({
   declarations: [
